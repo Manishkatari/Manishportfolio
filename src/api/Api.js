@@ -1,19 +1,8 @@
-import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url"; // Added required import
+const rawBaseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
+const BASE_URL = rawBaseUrl.endsWith("/api")
+  ? rawBaseUrl
+  : `${rawBaseUrl.replace(/\/$/, "")}/api`;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Load root .env first
-dotenv.config({ path: path.join(__dirname, ".env") });
-
-// Load src/.env and allow it to override existing variables
-dotenv.config({ path: path.join(__dirname, "src", ".env"),override: true });
-
-const BASE_URL = process.env.BASE_URL;
-
-//const BASE_URL = "http://localhost:5000/api";
 
 const fetchData = async (endpoint) => {
   try {
