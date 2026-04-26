@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "./Button";
-import Loading from './Loading';
+import Loading from "./Loading";
 import "../styles/style.css";
 import { getProfile } from "../api/Api";
 
@@ -38,12 +38,11 @@ const Carousel = () => {
   }
 
   return (
-
     <div className="card shadow profileCards">
       {/* Cover Image */}
       <div className="position-relative">
         <img
-          src={profile.coverImg}
+          src={`${import.meta.env.BASE_URL}${profile.coverImg?.replace("../public/", "")}`}
           alt="Cover"
           className="w-100 coverImg"
         />
@@ -52,7 +51,7 @@ const Carousel = () => {
         <div className="profileImg position-absolute">
           {profile.profileImg && (
             <img
-              src={profile.profileImg}
+              src={`${import.meta.env.BASE_URL}${profile.profileImg?.replace("../public/", "")}`}
               alt="Profile"
               className="rounded-circle"
             />
@@ -63,19 +62,18 @@ const Carousel = () => {
       {/* Card Body */}
       <div className="card-body profileDetals mt-5">
         <div>
-           <h3 className="mb-0">{profile.name}</h3>
-        <p className="text-muted">{profile.title}</p>
-        <p className="text-muted">{profile.location}</p>
+          <h3 className="mb-0">{profile.name}</h3>
+          <p className="text-muted">{profile.title}</p>
+          <p className="text-muted">{profile.location}</p>
 
-        <div className="mt-3">
-          <button className="btn btn-primary me-2">Message</button>
-          <button className="btn btn-outline-secondary">More</button>
-        </div>
+          <div className="mt-3">
+            <button className="btn btn-primary me-2">Message</button>
+            <button className="btn btn-outline-secondary">More</button>
+          </div>
 
-        <p className="mt-3">{profile.description}</p>
+          <p className="mt-3">{profile.description}</p>
         </div>
       </div>
-
     </div>
   );
 };

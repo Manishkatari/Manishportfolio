@@ -28,7 +28,7 @@ const ContactForm = () => {
       setFormMessage("Please enter a valid email address.");
       return;
     }
-
+    
     setIsSubmitting(true);
     try {
       const payload = {

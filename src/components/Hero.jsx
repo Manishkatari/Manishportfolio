@@ -51,7 +51,7 @@ const Hero = () => {
                 </div>
 
                 <div className="col-lg-8 col-md-12 mb-4">
-                     <Social />
+                  <Social />
                 </div>
               </div>
             </div>
@@ -59,7 +59,13 @@ const Hero = () => {
 
           <div className="col-md-6">
             <div className="col-lg-12 hero-image ">
-              <img src={hero.heroImg} className="" alt="Hero" />
+              {/* <img src={hero.heroImg} className="" alt="Hero" /> */}
+             <img 
+  src={hero.heroImg ? `${import.meta.env.BASE_URL}${hero.heroImg.replace('../public/', '')}` : ''} 
+  className="img-fluid" 
+  alt="Hero" 
+/>
+
             </div>
           </div>
         </div>

@@ -43,7 +43,7 @@ const Certification = () => {
         {certification.map((cert, index) => (
           <div className="timeline" key={index}>
             <div className="timeline-item" key={index}>
-              <div className="timeline-left">{cert.title}</div>
+              <div className="timeline-left"><a href="">{cert.title}</a></div>
               <div className="timeline-right">{cert.date}</div>
             </div>
           </div>
