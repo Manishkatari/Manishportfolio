@@ -28,7 +28,7 @@ const Hero = () => {
                 <p className="lead">{hero.title}</p>
                 <p className="text-muted">{hero.subtitle}</p>
 
-                <div className="gap-5 m-5">
+                <div className="m-5 px-5 d-flex justify-content-between">
                   {hero.buttons.map((btn, index) => (
                     <Button
                       key={index}

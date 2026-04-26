@@ -101,7 +101,6 @@ const ProjectCard = () => {
                       </div>
                     </div>
                   </div>
-
                   <div className="timeline-right">{project.year}</div>
                 </div>
               ))
