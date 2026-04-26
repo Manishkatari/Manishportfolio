@@ -3,6 +3,7 @@ import Button from "./Button";
 import Loading from "./Loading";
 import "../styles/style.css";
 import { getProfile } from "../api/Api";
+import { resolveAssetPath } from "../utils/assetPath";
 
 const Carousel = () => {
   const [profile, setProfile] = useState({});
@@ -42,7 +43,7 @@ const Carousel = () => {
       {/* Cover Image */}
       <div className="position-relative">
         <img
-          src={`${import.meta.env.BASE_URL}${profile.coverImg?.replace("../public/", "")}`}
+          src={resolveAssetPath(profile.coverImg)}
           alt="Cover"
           className="w-100 coverImg"
         />
@@ -51,7 +52,7 @@ const Carousel = () => {
         <div className="profileImg position-absolute">
           {profile.profileImg && (
             <img
-              src={`${import.meta.env.BASE_URL}${profile.profileImg?.replace("../public/", "")}`}
+              src={resolveAssetPath(profile.profileImg)}
               alt="Profile"
               className="rounded-circle"
             />

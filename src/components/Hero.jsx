@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import Social from "./Social";
 import { getHero } from "../api/Api";
+import { resolveAssetPath } from "../utils/assetPath";
 
 const Hero = () => {
   const [hero, setHero] = useState({ buttons: [] });
@@ -60,11 +61,11 @@ const Hero = () => {
           <div className="col-md-6">
             <div className="col-lg-12 hero-image ">
               {/* <img src={hero.heroImg} className="" alt="Hero" /> */}
-             <img 
-  src={hero.heroImg ? `${import.meta.env.BASE_URL}${hero.heroImg.replace('../public/', '')}` : ''} 
-  className="img-fluid" 
-  alt="Hero" 
-/>
+             <img
+              src={resolveAssetPath(hero.heroImg)}
+              className="img-fluid"
+              alt="Hero"
+            />
 
             </div>
           </div>

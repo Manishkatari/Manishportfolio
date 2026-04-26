@@ -90,13 +90,13 @@ const ProjectCard = () => {
                             target={project.githubUrl ? "_blank" : undefined}
                             rel={project.githubUrl ? "noreferrer" : undefined}
                           />
-                          {/* <Button
+                           <Button
                             name="Live Demo"
                             href={project.liveUrl}
                             className="btn btn-primary btn-sm"
                             target={project.liveUrl ? "_blank" : undefined}
                             rel={project.liveUrl ? "noreferrer" : undefined}
-                          /> */}
+                          /> 
                         </div>
                       </div>
                     </div>
